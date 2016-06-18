@@ -105,4 +105,15 @@ Audiosearch.prototype.getTastemakers = function (_numResults) {
   return this.get('/tastemakers/episodes/' + numResults);
 };
 
+// Note params can be optional but best to set them even if not needed to avoid confusion
+// start - The start date of the charts data in the format YYYY-MM-DD. Maximum (and default) date is the most recent chart date minus one week; earliest is 2013-06-01)
+// limit - The highest ranks for which to get data. Default is 10, maximum is 100.
+// country - The country for which to get charts data. US: 'us', Great Britain: 'gb', Ireland: 'ie', New Zealand: 'nz', South Africa: 'za'
+Audiosearch.prototype.getCharts = function (start, limit, country) {
+  start = start || "2013-06-01";
+  limit = limit || 10;
+  country = country || "us"
+  return this.get('/chart_daily?start_date=' + start + "&limit=" + limit + "&country=" + country);
+};
+
 module.exports = Audiosearch;
