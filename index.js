@@ -117,7 +117,7 @@ Audiosearch.prototype.getCharts = function (start, limit, country) {
     start = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
   }
   limit = limit || 10;
-  country = country || 'us'
+  country = country || 'us';
   return this.get('/chart_daily?limit=' + limit + '&country=' + country + '&start_date=' + start);
 };
 
