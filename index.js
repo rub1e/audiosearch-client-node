@@ -114,11 +114,11 @@ Audiosearch.prototype.getCharts = function (start, limit, country) {
     var now = new Date();
     //last week
     now.setDate(now.getDate() - 7);
-    start = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+    start = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
   }
   limit = limit || 10;
-  country = country || "us"
-  return this.get('/chart_daily?limit=' + limit "&country=" + country + "&start_date=" + start);
+  country = country || 'us'
+  return this.get('/chart_daily?limit=' + limit + '&country=' + country + '&start_date=' + start);
 };
 
 module.exports = Audiosearch;
